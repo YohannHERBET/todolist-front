@@ -13,6 +13,12 @@ export const generateTaskRows = (tasks, taskList, refreshTasks) => {
     dateCell.textContent = date.toLocaleDateString('fr-FR', options);
     row.appendChild(dateCell);
 
+    // if the date of the task is today add a color with the class
+    const today = new Date();
+    if (today.toDateString() === date.toDateString()) {
+      dateCell.classList.add('today');
+    }
+
     // create name cell
     const nameCell = document.createElement('td');
     nameCell.textContent = task.name;
