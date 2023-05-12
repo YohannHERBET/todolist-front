@@ -1,6 +1,50 @@
+
 h1 {
-  color: red;
-  font-size: 48px;
-  font-weight: 700;
   text-align: center;
+  margin-bottom: 1.7em;
+}
+
+.container-tasks {
+  display: flex;
+  align-items: center;
+  margin: 0 0 3em 1em;
+  height: 1em;
+}
+.container-today-task {
+  margin-left: 1em;
+}
+
+.container-today-task > span {
+  font-size: 1.2em;
+}
+
+#createTask {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  color: rgb(37, 87, 25);
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#createTask:hover {
+  background-color: rgb(80, 175, 56);
+  border: 2px transparent solid;
+  color: white;
+}
+
+#today-task-counter {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(44, 44, 44);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }

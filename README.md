@@ -17,3 +17,4 @@ It is developed in Javascript for this frontend, while the backend part is in an
 - Navigate to the project folder and install the dependencies using the command `npm install`.
 - Launch the development server with the `npm run start` command. The application will be accessible at http://localhost:1234.
 - To build the application for production, use the npm run build command. The compiled files will be placed in the dist folder with parcel.
+- you don't need to add config, i did'nt add the .env in the .gitignore
