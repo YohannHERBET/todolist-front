@@ -3,6 +3,11 @@ import { deletetask } from '../services/APICalls';
 // Function to generate the task rows
 export const generateTaskRows = (tasks, taskList, refreshTasks) => {
   tasks.forEach((task) => {
+    const loader = document.getElementById('loader');
+    const loaderOverlay = document.getElementById('loader-overlay');
+    loader.style.display = 'block';
+    loaderOverlay.style.display = 'block';
+
     // create row element for all tasks
     const row = document.createElement('tr');
 
