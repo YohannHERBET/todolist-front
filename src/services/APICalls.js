@@ -35,3 +35,23 @@ export const deletetask = async (id) => {
     throw error;
   }
 };
+
+// call api for create a task
+export const createTask = async (task) => {
+  try {
+    const response = await fetch(
+      `${apiUrl}/taches`,
+      {
+        method: 'POST',
+        body: JSON.stringify(task),
+      }
+    );
+    if (!response.ok) {
+      throw new Error('Error creating task');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+};
