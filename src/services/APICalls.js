@@ -55,3 +55,21 @@ export const createTask = async (task) => {
     throw error;
   }
 };
+
+// call api for update a task
+export const updateTask = async (id, updatedTask) => {
+  try {
+    const response = await fetch(`${apiUrl}/taches/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(updatedTask),
+    });
+    if (!response.ok) {
+      throw new Error('Error updating task');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+};
+
