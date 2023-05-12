@@ -1,4 +1,5 @@
 import { deletetask } from '../services/APICalls';
+import { updateTaskForm } from '../components/TaskForm';
 
 // Function to generate the task rows
 export const generateTaskRows = (tasks, taskList, refreshTasks) => {
@@ -41,7 +42,10 @@ export const generateTaskRows = (tasks, taskList, refreshTasks) => {
     updateButton.setAttribute('id', 'updateTaskButton');
     updateButton.setAttribute('aria-label', 'Mettre à jour la tâche');
     updateButton.addEventListener('click', () => {
-      console.log('Update button clicked');
+      const form = document.getElementById('task-form');
+      form.setAttribute('data-task-id', task.id);
+      // fill the update task form
+      updateTaskForm(task);
     });
     // create cell for button delete
     const deleteButton = document.createElement('button');
