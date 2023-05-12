@@ -1,4 +1,4 @@
-# oDo List Frontend Project
+# ToDo List Frontend Project
 This todo list allows creating, retrieving, updating, deleting tasks and watch today's tasks.
 It is developed in Javascript for this frontend, while the backend part is in another repository here => { https://github.com/YohannHERBET/todolist-back }
 
