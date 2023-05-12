@@ -6,6 +6,11 @@ import { showNotification } from '../utils/showNotification';
 
 // Component administrator for the tasks
 export const TaskTable = async () => {
+  const loader = document.getElementById('loader');
+  const loaderOverlay = document.getElementById('loader-overlay');
+  loader.style.display = 'block';
+  loaderOverlay.style.display = 'block';
+
   const tasks = await fetchTasks()
   const todayTaskCounter = document.getElementById('today-task-counter');
   const counter = countTodayTasks(tasks)
@@ -16,4 +21,6 @@ export const TaskTable = async () => {
   }
     // generate tasks table
     generateTaskRows(tasks, taskList, () => refreshTasks(taskList));
+    loader.style.display = 'none';
+    loaderOverlay.style.display = 'none';
 }
