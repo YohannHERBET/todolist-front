@@ -17,3 +17,21 @@ export const fetchTasks = async () => {
     throw error;
   }
 };
+
+// call api for delete a task
+export const deletetask = async (id) => {
+  try {
+    const response = await fetch(
+      `${apiUrl}/taches/${id}`, 
+      { method: 'DELETE'}
+    );
+    if (!response.ok) {
+      throw new Error('Error deleting tasks');
+    } else {
+      return response.ok
+    };
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+};
