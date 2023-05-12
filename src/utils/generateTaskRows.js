@@ -25,18 +25,25 @@ export const generateTaskRows = (tasks, taskList, refreshTasks) => {
 
     // create cell for button update
     const updateButton = document.createElement('button');
-    updateButton.textContent = 'Update';
+    updateButton.textContent = 'Modifier';
+    updateButton.setAttribute('class', 'button-validate');
+    updateButton.setAttribute('id', 'updateTaskButton');
     updateButton.setAttribute('aria-label', 'Mettre à jour la tâche');
     updateButton.addEventListener('click', () => {
       console.log('Update button clicked');
     });
     // create cell for button delete
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
+    deleteButton.textContent = 'Supprimer';
+    deleteButton.setAttribute('class', 'button-warning');
+    updateButton.setAttribute('id', 'deleteTaskButton');
     deleteButton.setAttribute('aria-label', 'Supprimer la tâche');
     deleteButton.addEventListener('click', async () => {
-      // refresh task if the delete is ok
-      await deletetask(task.id) ? refreshTasks() : false;
+      // refresh tasks if the delete is ok
+      const confirmation = confirm("Êtes-vous sûr de vouloir supprimer cette tâche ?");
+      if (confirmation) {
+        await deletetask(task.id) ? refreshTasks(taskList) : false;
+      }
     });
     // create a cell for button update and delete
     const buttonCell = document.createElement('td');
